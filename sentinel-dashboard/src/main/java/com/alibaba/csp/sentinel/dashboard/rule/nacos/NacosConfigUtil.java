@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alibaba.csp.sentinel.dashboard.rule;
+package com.alibaba.csp.sentinel.dashboard.rule.nacos;
 
 /**
  * @author Eric Zhao
  * @since 1.4.0
  */
-public interface DynamicRulePublisher<T> {
+public final class NacosConfigUtil {
 
-    /**
-     * Publish rules to remote rule configuration center for given application name.
-     *
-     * @param app app name
-     * @param rules list of rules to push
-     * @throws Exception if some error occurs
-     */
-    Boolean publish(String app, T rules) throws Exception;
+    public static final String GROUP_ID = "SENTINEL_GROUP";
+    
+    public static final String FLOW_DATA_ID_POSTFIX = "-flow-rules";
+
+    public static final String DEGRADE_DATA_ID_POSTFIX = "-degrade-rules";
+
 }
